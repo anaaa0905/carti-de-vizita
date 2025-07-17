@@ -1,0 +1,353 @@
+:root {
+    --alb: #FFFFFF;
+    --gri-deschis: #F1F2F2;
+    --galben: #F4C134;
+    --rosu: #DB2E2E;
+    --bleumarin: #1B1E2A;
+    --font-principal: 'Source Sans 3', Arial, sans-serif;
+}
+
+body {
+    font-family: var(--font-principal);
+}
+
+.carte-vizita {
+    width: 9cm;
+    height: 5cm;
+    border: 2px solid var(--bleumarin);
+    padding: 20px;
+    background: var(--alb);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.carte-vizita.fata {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+    background: var(--alb);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    font-family: var(--font-principal);
+    overflow: visible;
+    margin-bottom: 32px;
+    margin-top: 32px;
+    position: relative;
+}
+
+.carte-vizita.verso {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    box-sizing: border-box;
+    padding: 20px;
+    justify-content: center;
+    background: url('../sigla/logo-ploiesti.png') center center no-repeat;
+    /* background-size: 170%; */
+    background-size: contain;
+    color: var(--gri-deschis);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    font-family: var(--font-principal);
+    overflow: hidden;
+    font-size: 1.2em;
+    margin-bottom: 0;
+    margin-top: 32px;
+}
+
+.nume-mare {
+    font-size: 18px;
+    font-weight: 900;
+    margin: 0;
+    padding: 0;
+    line-height: 1;
+}
+.prenume, .nume, .functie {
+    font-size: 18px;
+    font-weight: 900;
+    margin: 0;
+    padding: 0;
+    line-height: 1;
+}
+.functie {
+    display: block;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding: 0;
+    border: 0;
+    color: var(--rosu);
+    font-weight: 900;
+    font-size: 18px;
+    text-shadow: 0 0 0.5px var(--rosu), 0 0 0.5px var(--rosu);
+    letter-spacing: 0.01em;
+}
+
+.eticheta {
+    color: var(--rosu);
+    font-weight: bold;
+    font-size: 10px;
+    padding-right: 6px;
+}
+.contact-inline .eticheta[style] {
+    padding-right: 0 !important;
+}
+
+.prenume, .nume {
+    color: var(--bleumarin) !important;
+}
+
+.pozitie {
+  color: var(--rosu);
+  font-size: 18px;
+  font-weight: 900;
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+  display: block;
+}
+
+.contact-inline {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    font-size: 14px;
+    color: var(--bleumarin);
+    font-weight: bold;
+    margin: 0;
+    padding: 0;
+}
+.contact-inline .eticheta {
+    color: var(--rosu);
+    font-weight: bold;
+    font-size: 14px;
+    padding-right: 7px;
+}
+.contact-inline .eticheta:first-of-type {
+    padding-right: 7px !important;
+}
+.contact-inline .eticheta:nth-of-type(3) {
+    padding-right: 7px !important;
+}
+
+.info-nume {
+    flex-shrink: 0;
+}
+.contact-adresa {
+    flex-shrink: 0;
+    margin-top: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+.contact-inline,
+.carte-vizita.fata p:last-of-type {
+    margin-top: 0;
+}
+.contact-inline,
+.contact-inline .eticheta,
+.carte-vizita.fata p .eticheta,
+.carte-vizita.fata p {
+    font-size: 8px;
+} 
+
+.adresa-flex {
+    display: flex;
+    align-items: flex-start;
+    margin: 0;
+    padding: 0;
+    font-size: 10px;
+    color: var(--bleumarin);
+    font-weight: bold;
+    line-height: 1.2;
+}
+.adresa-flex .eticheta {
+    flex-shrink: 0;
+    padding-right: 6px;
+}
+.indent-adresa {
+    display: inline-block;
+    margin-left: 0;
+}
+
+.adresa-web {
+    color: var(--bleumarin);
+    position: absolute;
+    top: 105px;
+    right: 20px;
+    left: auto;
+    height: calc(100% - 145px);
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-end;
+    pointer-events: none;
+}
+.adresa-web p {
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    margin: 0;
+    color: var(--bleumarin);
+    font-size: 10px;
+    font-weight: 900;
+    letter-spacing: 0.01em;
+}
+
+.qr-corner {
+    position: absolute;
+    top: 19px;
+    right: 19px;
+    width: 70px;
+    height: 70px;
+    background: transparent;
+    border-radius: 4px;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.qr-corner img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: contain;
+    border-radius: 4px;
+}
+
+.qr-padding {
+    padding: 5px;
+    background: var(--galben);
+    border-radius: 0;
+    display: inline-block;
+}
+.qr-padding canvas, .qr-padding img {
+    border-radius: 0;
+    overflow: hidden;
+}
+
+.carte-vizita-container {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.carte-vizita.fata,
+.carte-vizita.verso {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+#cuprins {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 24px;
+}
+#cuprins a {
+  font-family: var(--font-principal);
+  color: var(--bleumarin);
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 700;
+  padding: 4px 0;
+  transition: color 0.7s;
+}
+#cuprins a:hover {
+  color: var(--rosu);
+}
+
+#btn-top {
+  position: fixed;
+  left: 24px;
+  bottom: 24px;
+  z-index: 1000;
+  background: var(--bleumarin);
+  color: #fff;
+  border: none;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  padding: 0;
+  font-size: 28px;
+  font-family: var(--font-principal);
+  font-weight: 700;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  cursor: pointer;
+  transition: background 0.7s, color 0.7s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#btn-top:hover {
+  background: var(--rosu);
+  color: #fff;
+}
+
+.eticheta-pdf {
+    padding-right: 16px !important;
+}
+
+.eticheta-i {
+    margin-left: 7px !important;
+    margin-right: 7px !important;
+}
+
+@media print {
+    body, html {
+        margin: 0 !important;
+        padding: 0 !important;
+        background: #fff !important;
+        color: #000 !important;
+        font-family: 'Source Sans 3', Arial, sans-serif !important;
+    }
+    .carte-vizita-container {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 0 !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+    .carte-vizita.fata {
+        order: 1 !important;
+        width: 9cm !important;
+        height: 5cm !important;
+        margin: 0 !important;
+        box-shadow: none !important;
+        page-break-after: always;
+        page-break-inside: avoid;
+        background: #fff !important;
+        color: #000 !important;
+        border: 2px solid #333 !important;
+        position: static !important;
+        box-sizing: border-box !important;
+    }
+    .carte-vizita.verso {
+        order: 2 !important;
+        width: 9cm !important;
+        height: 5cm !important;
+        margin: 0 !important;
+        box-shadow: none !important;
+        page-break-inside: avoid;
+        background: url('../sigla/logo-ploiesti.png') center center no-repeat !important;
+        /* background-size: 170% !important; */
+        background-size: contain !important;
+        border: 2px solid #333 !important;
+        color: #000 !important;
+        position: static !important;
+        box-sizing: border-box !important;
+    }
+    .adresa-web {
+        display: flex !important;
+    }
+    .qr-corner {
+        display: none !important;
+    }
+    .carte-vizita.fata .qr-corner {
+        display: flex !important;
+    }
+    .btn-print, #btn-top {
+        display: none !important;
+    }
+    @page {
+        size: 9cm 5cm;
+        margin: 0;
+    }
+}
